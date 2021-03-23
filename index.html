@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 
     <style type="text/css" media="screen">
 
@@ -127,10 +128,10 @@
                         <td style="padding-left: 35px; padding-right: 21px; ">
                           <p style="font-size: 20px; font-weight: bold; text-align: center; font-family: 'Roboto', sans-serif; font-weight: 400px;"> Enter this OTP in the app </p>
                           <p style="padding-bottom: 15px; font-family: 'Roboto', sans-serif; font-weight: 500; margin-bottom: 5px; ">
-                            <u> <span style="color: #1761A0;"onMouseOver="this.style.color='#5996c9'" onMouseOut="this.style.color='#1761A0'"> XXXXXX </span> </u> is the OTP to access your account in the app.
+                            <u> <span id="yourOTP" style="color: #1761A0;"onMouseOver="this.style.color='#5996c9'" onMouseOut="this.style.color='#1761A0'"> XXXXXX </span> </u> is the OTP to access your account in the app.
                              This OTP is valid for 5 mins. Please do not share it with anyone.
                           </p>
-                          <button type="button" name="button" style="align-items: center; margin-left: 5rem;"> Copy OTP </button>
+                          <button onclick="copyFunction()" type="button" name="button" style="align-items: center; margin-left: 5rem;"> Copy OTP </button>
                          <p style="font-family: 'Roboto', sans-serif; font-weight: 500;">Thank you,<br> Parkify Team.</p>
                         </td>
                       </tr>
@@ -169,11 +170,22 @@
       <td>
         <table width="100%">
           <tr>
-            <td>
-              <img src="techarius_logo_nobg.png" alt="" width="300px" style="max-width: 360px; ">
+            <td style="text-align: center; padding: 10px;">
+              <a href="http://techariusdev.xyz/"><img src="techarius_logo_nobg.png" alt="" width="300px" style="height: 100px; width: 120px; max-width: 150px; "></a>
+              <p>
+                <a href="mailto:techariusdev@gmail.com">techariusdev@gmail.com</a>
+              </p>
             </td>
           </tr>
         </table>
+      </td>
+    </tr>
+
+    <!--horizontal border-->
+
+    <tr>
+      <td>
+        <hr style="height: 5px; border-width: 0; color: #1761A0; background-color: #1761A0;">
       </td>
     </tr>
 
@@ -181,10 +193,10 @@
 
     <tr>
       <td>
-        <table width+"100%">
+        <table width="100%">
           <tr>
-            <td>
-              <p style="color: #aaaaaa; font-family: 'Lucida Grande',Verdana,Arial,sans-serif; font-size: 12px; ">
+            <td style="text-align: center;">
+              <p style="color: #aaaaaa; font-family: 'Lucida Grande',Verdana,Arial,sans-serif; font-size: 12px; text-align: center; ">
                 This is an auto generated email, please do not reply or send mail to this email id.</p>
             </td>
           </tr>
@@ -193,11 +205,27 @@
     </tr>
 
 
-     <p>  </p>
-
-
        </table>
      </center>
+
+     <script>
+     function copyFunction()
+     {
+     /* Get the text field */
+      var copyText = document.getElementById("yourOTP");
+
+     /* Select the text field */
+     copyText.select();
+     copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+     /* Copy the text inside the text field */
+     document.execCommand("copy");
+
+     /* Alert the copied text */
+     alert("Copied " + copyText.value + " clipboard");
+     }
+     </script>
+
 
 
 
